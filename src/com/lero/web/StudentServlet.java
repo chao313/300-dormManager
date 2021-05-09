@@ -225,7 +225,7 @@ public class StudentServlet extends HttpServlet{
 				saveNum = studentDao.studentUpdate(con, student);
 			} else if(studentDao.haveNameByNumber(con, student.getStuNumber())){
 				request.setAttribute("student", student);
-				request.setAttribute("error", "¸ÃÑ§ºÅÒÑ´æÔÚ");
+				request.setAttribute("error", "è¯¥å­¦å·å·²å­˜åœ¨");
 				request.setAttribute("mainPage", "admin/studentSave.jsp");
 				request.getRequestDispatcher("mainAdmin.jsp").forward(request, response);
 				try {
@@ -241,7 +241,7 @@ public class StudentServlet extends HttpServlet{
 				request.getRequestDispatcher("student?action=list").forward(request, response);
 			} else {
 				request.setAttribute("student", student);
-				request.setAttribute("error", "±£´æÊ§°Ü");
+				request.setAttribute("error", "ä¿å­˜å¤±è´¥");
 				request.setAttribute("mainPage", "admin/studentSave.jsp");
 				request.getRequestDispatcher("mainAdmin.jsp").forward(request, response);
 			}

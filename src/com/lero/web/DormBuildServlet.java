@@ -164,7 +164,7 @@ public class DormBuildServlet extends HttpServlet{
 		try {
 			con = dbUtil.getCon();
 			if(dormBuildDao.existManOrDormWithId(con, dormBuildId)) {
-				request.setAttribute("error", "ËŞÉáÂ¥ÏÂÓĞËŞÉá»òËŞ¹Ü£¬²»ÄÜÉ¾³ı¸ÃËŞÉáÂ¥");
+				request.setAttribute("error", "å®¿èˆæ¥¼ä¸‹æœ‰å®¿èˆæˆ–å®¿ç®¡ï¼Œä¸èƒ½åˆ é™¤è¯¥å®¿èˆæ¥¼");
 			} else {
 				dormBuildDao.dormBuildDelete(con, dormBuildId);
 			}
@@ -202,7 +202,7 @@ public class DormBuildServlet extends HttpServlet{
 				request.getRequestDispatcher("dormBuild?action=list").forward(request, response);
 			} else {
 				request.setAttribute("dormBuild", dormBuild);
-				request.setAttribute("error", "±£´æÊ§°Ü");
+				request.setAttribute("error", "ä¿å­˜å¤±è´¥");
 				request.setAttribute("mainPage", "dormBuild/dormBuildSave.jsp");
 				request.getRequestDispatcher("mainAdmin.jsp").forward(request, response);
 			}
@@ -243,11 +243,11 @@ public class DormBuildServlet extends HttpServlet{
 	private String genPagation(int totalNum, int currentPage, int pageSize){
 		int totalPage = totalNum%pageSize==0?totalNum/pageSize:totalNum/pageSize+1;
 		StringBuffer pageCode = new StringBuffer();
-		pageCode.append("<li><a href='dormBuild?page=1'>Ê×Ò³</a></li>");
+		pageCode.append("<li><a href='dormBuild?page=1'>é¦–é¡µ</a></li>");
 		if(currentPage==1) {
-			pageCode.append("<li class='disabled'><a href='#'>ÉÏÒ»Ò³</a></li>");
+			pageCode.append("<li class='disabled'><a href='#'>ä¸Šä¸€é¡µ</a></li>");
 		}else {
-			pageCode.append("<li><a href='dormBuild?page="+(currentPage-1)+"'>ÉÏÒ»Ò³</a></li>");
+			pageCode.append("<li><a href='dormBuild?page="+(currentPage-1)+"'>ä¸Šä¸€é¡µ</a></li>");
 		}
 		for(int i=currentPage-2;i<=currentPage+2;i++) {
 			if(i<1||i>totalPage) {
@@ -260,11 +260,11 @@ public class DormBuildServlet extends HttpServlet{
 			}
 		}
 		if(currentPage==totalPage) {
-			pageCode.append("<li class='disabled'><a href='#'>ÏÂÒ»Ò³</a></li>");
+			pageCode.append("<li class='disabled'><a href='#'>ä¸‹ä¸€é¡µ</a></li>");
 		} else {
-			pageCode.append("<li><a href='dormBuild?page="+(currentPage+1)+"'>ÏÂÒ»Ò³</a></li>");
+			pageCode.append("<li><a href='dormBuild?page="+(currentPage+1)+"'>ä¸‹ä¸€é¡µ</a></li>");
 		}
-		pageCode.append("<li><a href='dormBuild?page="+totalPage+"'>Î²Ò³</a></li>");
+		pageCode.append("<li><a href='dormBuild?page="+totalPage+"'>å°¾é¡µ</a></li>");
 		return pageCode.toString();
 	}
 	

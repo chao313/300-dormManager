@@ -166,7 +166,7 @@ public class DormManagerServlet extends HttpServlet{
 				saveNum = dormManagerDao.dormManagerUpdate(con, dormManager);
 			} else if(dormManagerDao.haveManagerByUser(con, dormManager.getUserName())){
 				request.setAttribute("dormManager", dormManager);
-				request.setAttribute("error", "¸ÃÓÃ»§ÃûÒÑ´æÔÚ");
+				request.setAttribute("error", "è¯¥ç”¨æˆ·åå·²å­˜åœ¨");
 				request.setAttribute("mainPage", "admin/dormManagerSave.jsp");
 				request.getRequestDispatcher("mainAdmin.jsp").forward(request, response);
 				try {
@@ -182,7 +182,7 @@ public class DormManagerServlet extends HttpServlet{
 				request.getRequestDispatcher("dormManager?action=list").forward(request, response);
 			} else {
 				request.setAttribute("dormManager", dormManager);
-				request.setAttribute("error", "±£´æÊ§°Ü");
+				request.setAttribute("error", "ä¿å­˜å¤±è´¥");
 				request.setAttribute("mainPage", "dormManager/dormManagerSave.jsp");
 				request.getRequestDispatcher("mainAdmin.jsp").forward(request, response);
 			}
@@ -223,11 +223,11 @@ public class DormManagerServlet extends HttpServlet{
 	private String genPagation(int totalNum, int currentPage, int pageSize){
 		int totalPage = totalNum%pageSize==0?totalNum/pageSize:totalNum/pageSize+1;
 		StringBuffer pageCode = new StringBuffer();
-		pageCode.append("<li><a href='dormManager?page=1'>Ê×Ò³</a></li>");
+		pageCode.append("<li><a href='dormManager?page=1'>é¦–é¡µ</a></li>");
 		if(currentPage==1) {
-			pageCode.append("<li class='disabled'><a href='#'>ÉÏÒ»Ò³</a></li>");
+			pageCode.append("<li class='disabled'><a href='#'>ä¸Šä¸€é¡µ</a></li>");
 		}else {
-			pageCode.append("<li><a href='dormManager?page="+(currentPage-1)+"'>ÉÏÒ»Ò³</a></li>");
+			pageCode.append("<li><a href='dormManager?page="+(currentPage-1)+"'>ä¸Šä¸€é¡µ</a></li>");
 		}
 		for(int i=currentPage-2;i<=currentPage+2;i++) {
 			if(i<1||i>totalPage) {
@@ -240,11 +240,11 @@ public class DormManagerServlet extends HttpServlet{
 			}
 		}
 		if(currentPage==totalPage) {
-			pageCode.append("<li class='disabled'><a href='#'>ÏÂÒ»Ò³</a></li>");
+			pageCode.append("<li class='disabled'><a href='#'>ä¸‹ä¸€é¡µ</a></li>");
 		} else {
-			pageCode.append("<li><a href='dormManager?page="+(currentPage+1)+"'>ÏÂÒ»Ò³</a></li>");
+			pageCode.append("<li><a href='dormManager?page="+(currentPage+1)+"'>ä¸‹ä¸€é¡µ</a></li>");
 		}
-		pageCode.append("<li><a href='dormManager?page="+totalPage+"'>Î²Ò³</a></li>");
+		pageCode.append("<li><a href='dormManager?page="+totalPage+"'>å°¾é¡µ</a></li>");
 		return pageCode.toString();
 	}
 	

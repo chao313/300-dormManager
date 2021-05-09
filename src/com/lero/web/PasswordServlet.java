@@ -64,14 +64,14 @@ public class PasswordServlet extends HttpServlet{
 					request.setAttribute("oldPassword", oldPassword);
 					request.setAttribute("newPassword", newPassword);
 					request.setAttribute("rPassword", newPassword);
-					request.setAttribute("error", "ĞŞ¸Ä³É¹¦ ");
+					request.setAttribute("error", "ä¿®æ”¹æˆåŠŸ ");
 					request.setAttribute("mainPage", "admin/passwordChange.jsp");
 					request.getRequestDispatcher("mainAdmin.jsp").forward(request, response);
 				} else {
 					request.setAttribute("oldPassword", oldPassword);
 					request.setAttribute("newPassword", newPassword);
 					request.setAttribute("rPassword", newPassword);
-					request.setAttribute("error", "Ô­ÃÜÂë´íÎó");
+					request.setAttribute("error", "åŸå¯†ç é”™è¯¯");
 					request.setAttribute("mainPage", "admin/passwordChange.jsp");
 					request.getRequestDispatcher("mainAdmin.jsp").forward(request, response);
 				}
@@ -83,14 +83,14 @@ public class PasswordServlet extends HttpServlet{
 					request.setAttribute("oldPassword", oldPassword);
 					request.setAttribute("newPassword", newPassword);
 					request.setAttribute("rPassword", newPassword);
-					request.setAttribute("error", "ĞŞ¸Ä³É¹¦ ");
+					request.setAttribute("error", "ä¿®æ”¹æˆåŠŸ ");
 					request.setAttribute("mainPage", "dormManager/passwordChange.jsp");
 					request.getRequestDispatcher("mainManager.jsp").forward(request, response);
 				} else {
 					request.setAttribute("oldPassword", oldPassword);
 					request.setAttribute("newPassword", newPassword);
 					request.setAttribute("rPassword", newPassword);
-					request.setAttribute("error", "Ô­ÃÜÂë´íÎó");
+					request.setAttribute("error", "åŸå¯†ç é”™è¯¯");
 					request.setAttribute("mainPage", "dormManager/passwordChange.jsp");
 					request.getRequestDispatcher("mainManager.jsp").forward(request, response);
 				}
@@ -102,14 +102,14 @@ public class PasswordServlet extends HttpServlet{
 					request.setAttribute("oldPassword", oldPassword);
 					request.setAttribute("newPassword", newPassword);
 					request.setAttribute("rPassword", newPassword);
-					request.setAttribute("error", "ĞŞ¸Ä³É¹¦ ");
+					request.setAttribute("error", "ä¿®æ”¹æˆåŠŸ ");
 					request.setAttribute("mainPage", "student/passwordChange.jsp");
 					request.getRequestDispatcher("mainStudent.jsp").forward(request, response);
 				} else {
 					request.setAttribute("oldPassword", oldPassword);
 					request.setAttribute("newPassword", newPassword);
 					request.setAttribute("rPassword", newPassword);
-					request.setAttribute("error", "Ô­ÃÜÂë´íÎó");
+					request.setAttribute("error", "åŸå¯†ç é”™è¯¯");
 					request.setAttribute("mainPage", "student/passwordChange.jsp");
 					request.getRequestDispatcher("mainStudent.jsp").forward(request, response);
 				}

@@ -2,10 +2,10 @@ package com.lero.model;
 
 public class PageBean {
 
-	private int page; // �ڼ�ҳ
-	private int pageSize; // ÿҳ��¼��
+	private int page; // 第几页
+	private int pageSize; // 每页记录数
 	@SuppressWarnings("unused")
-	private int start;  // ��ʼҳ
+	private int start;  // 起始页
 	
 	
 	public PageBean(int page, int pageSize) {

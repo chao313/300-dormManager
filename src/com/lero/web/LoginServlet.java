@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 				currentAdmin = userDao.Login(con, admin);
 				if(currentAdmin == null) {
 					request.setAttribute("admin", admin);
-					request.setAttribute("error", "ÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+					request.setAttribute("error", "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 					request.getRequestDispatcher("login.jsp").forward(request, response);
 				} else {
 					if("remember-me".equals(remember)) {
@@ -71,7 +71,7 @@ public class LoginServlet extends HttpServlet {
 				currentDormManager = userDao.Login(con, dormManager);
 				if(currentDormManager == null) {
 					request.setAttribute("dormManager", dormManager);
-					request.setAttribute("error", "ÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+					request.setAttribute("error", "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 					request.getRequestDispatcher("login.jsp").forward(request, response);
 				} else {
 					if("remember-me".equals(remember)) {
@@ -89,7 +89,7 @@ public class LoginServlet extends HttpServlet {
 				currentStudent = userDao.Login(con, student);
 				if(currentStudent == null) {
 					request.setAttribute("student", student);
-					request.setAttribute("error", "ÓÃ»§Ãû»òÃÜÂë´íÎó£¡");
+					request.setAttribute("error", "ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯ï¼");
 					request.getRequestDispatcher("login.jsp").forward(request, response);
 				} else {
 					if("remember-me".equals(remember)) {
